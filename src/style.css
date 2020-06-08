@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: #2f353b;
+  background-color: #181a1d;
 }
 
 .watch-container {
@@ -60,6 +60,11 @@ body {
 
 .btn {
   background-image: linear-gradient(to right, #d31027a9, #ea384d8a);
+}
+
+.btn:disabled {
+  background-image: linear-gradient(to right, #615f5fa9, #4e36368a);
+  cursor: not-allowed;
 }
 
 .btn:hover,
