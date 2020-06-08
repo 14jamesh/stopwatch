@@ -1,12 +1,13 @@
-let tickSeconds = 0; //second counter
-let identifier; //setInterval returns an identifier. I want to be able to access this in my other event listeners.
+let tickSeconds = 0; // second counter
+let identifier; // setInterval function returns an identifier that is stored in this variable for later reference in event listeners.
 
 const btnStart = document.querySelector(".btn-start");
 
 //Event Listeners
+
 document.querySelector(".btn-start").addEventListener("click", () => {
   clock();
-  btnStart.disabled = true;
+  btnStart.disabled = true; //disable button so Set Interval cannot be spammed
 });
 
 document.querySelector(".btn-reset").addEventListener("click", () => {
@@ -21,6 +22,7 @@ document.querySelector(".btn-stop").addEventListener("click", () => {
   btnStart.disabled = false;
 });
 
+// Set Interval to tick every 1000ms. On every tick, increment GLOBAL tick counter by one. displayValue() is called to update the UI.
 const clock = function () {
   identifier = setInterval(() => {
     tickSeconds++;
@@ -28,6 +30,7 @@ const clock = function () {
   }, 1000);
 };
 
+// Calculates the current hours, minutes and seconds elapsed since the first clock tick using GLOBAL tick counter. Returns the results in an array.
 const updateValues = function () {
   let hour = Math.floor(tickSeconds / 3600);
   let minutes = Math.floor((tickSeconds - hour * 3600) / 60);
@@ -35,9 +38,11 @@ const updateValues = function () {
   return [hour, minutes, seconds];
 };
 
+// This function displays the stopwatch on the UI.
 const displayValue = function () {
-  let [hour, minutes, seconds] = updateValues();
+  let [hour, minutes, seconds] = updateValues(); //prior to updating the UI retrieve the most recent updated values.
 
+  //switch statement to add a preceding 0 in the instances where seconds/mins/hours are not yet double digit numbers. Switch checks all conditions.
   switch (true) {
     case seconds.toString().length < 2:
       seconds = "0" + seconds;
