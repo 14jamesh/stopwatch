@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* Layout */
+
+body {
+  margin: 0px;
+  height: 100vh;
+
+  font-family: "Dancing Script", cursive;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #2f353b;
+}
+
+.watch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Font styling */
+
+.heading {
+  font-size: 55px;
+  font-weight: lighter;
+
+  margin-bottom: 15px;
+}
+
+.time {
+  font-size: 45px;
+}
+
+/* Button styling */
+
+.btn {
+  width: 291px;
+
+  font-family: "Roboto", Arial;
+  font-weight: lighter;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+
+  margin-top: 15px;
+  padding: 12px 12px;
+
+  border-style: none;
+  border-radius: 8px;
+}
+
+.btn {
+  background-image: linear-gradient(to right, #d31027a9, #ea384d8a);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #d31027;
+  transition: background-color 0.4s;
+}
