@@ -40,7 +40,7 @@ const updateValues = function () {
 
 // This function displays the stopwatch on the UI.
 const displayValue = function () {
-  let [hour, minutes, seconds] = updateValues(); //prior to updating the UI retrieve the most recent updated values.
+  let [hour, minutes, seconds] = updateValues(); //prior to updating the UI retrieve the most recent values for the amount of hr/min/sec elapsed.
 
   //switch statement to add a preceding 0 in the instances where seconds/mins/hours are not yet double digit numbers. Switch checks all conditions.
   switch (true) {
